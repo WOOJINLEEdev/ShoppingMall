@@ -289,12 +289,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // 마일리지 입력창
         mileageInput.addEventListener("keyup", () => {
-          // let mileageStatus = document.querySelector(".mileage_in").textContent;
-          // // let mileageInput = document.querySelector(".mileage_input");
-          // let mileage = document.querySelector(".mileage_in");
-          // let mileage_zone = document.querySelector(".mileage_in_zone");
-          // let finalPriceZone = document.querySelector(".final_price_zone");
-
           if (Number(mileageInput.value) > Number(mileageStatus)) {
             alert("보유 마일리지보다 많이 입력할 수 없습니다.");
             mileage_zone.innerHTML = Number(mileageStatus);
@@ -307,7 +301,6 @@ document.addEventListener("DOMContentLoaded", function () {
               countPrice();
               return false;
             }
-            // countPrice();
           } else if (
             Number(mileageInput.value) > Number(finalPriceZone.textContent)
           ) {
@@ -319,38 +312,18 @@ document.addEventListener("DOMContentLoaded", function () {
           countPrice();
         });
 
-        // --- 쿠폰 선택
         function selectedCoupon() {
           const opt = couponSelect.options[couponSelect.selectedIndex];
           orderPriceCalculator.setCouponByType(opt.value);
 
-          // if (opt.value === "percent") {
-          //   couponZone.innerText =
-          //     sum * 0.2 > 0 ? `-${toString(sum * 0.2)}` : 0;
-          // } else if (opt.value === "amount") {
-          //   couponZone.innerText = `-${toString(5000)}`;
-          // } else if (opt.value === "") {
-          //   couponZone.innerText = 0;
-          // }
           couponZone.innerText = orderPriceCalculator.getDiscountPriceText();
           countPrice();
         }
 
         // --- 총결제금액 계산
         function countPrice() {
-          // finalPriceZone.innerHTML =
-          //   sum +
-          //   Number(deliveryFee) -
-          //   Number(mileageZone.textContent) -
-          //   Number(couponZone.textContent);
-          // console.log("nnnn", typeof deliveryFee);
-
-          // finalPriceZone.innerHTML = toString(
-          //   Number(finalPriceZone.textContent)
-          // );
           finalPriceZone.innerHTML =
             orderPriceCalculator.getFormattedTotalPrice();
-          // orderTotal.innerHTML = orderPriceCalculator.getOrderTotalHtml();
         }
 
         // --- 쿠폰선택시 이벤트 발생
@@ -358,12 +331,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         finalPriceZone.innerHTML =
           orderPriceCalculator.getFormattedTotalPrice();
-        // finalPriceZone.innerHTML =
-        //   Number(totalPriceZone.textContent) +
-        //   Number(deliveryCharge.textContent) -
-        //   Number(mileageZone.textContent) -
-        //   Number(couponZone.textContent);
-        // finalPriceZone.innerHTML = toString(Number(finalPriceZone.textContent));
       });
   }
 
@@ -380,15 +347,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let mileage_zone = document.querySelector(".mileage_in_zone");
   let finalPriceZone = document.querySelector(".final_price_zone");
 
-  // document
-  //     .querySelector(".mileage_input")
-  //     .addEventListener("input", function (e) {
-  //       e.target.value = e.target.value.replace(/[^0-9.]/g, "");
-  //     });
-
   let mileageIn = document.querySelector(".mileage_in");
   mileageInput.oninput = function (e) {
-    // console.log("oninput ", e.target.value);
     e.target.value = e.target.value.replace(/[^0-9.]/g, "");
     if (mileageIn.textContent === "0") {
       e.target.value = 0;
@@ -436,12 +396,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const infoGroup = document.querySelector(".info_group");
 
   function generateCartItemHtml(cartItem, i) {
-    // console.log("cartItem:", cartItem);
-    const price = Number(cartItem.variant_price) * cartItem.quantity;
-    // console.log(
-    //   "price:",
-    //   price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
-    // );
     return `<li class="info_wrap">
         <img class="item_img" alt="" src="${cartItem.image_src}">
         <a href="item_detail.html?item_id=${

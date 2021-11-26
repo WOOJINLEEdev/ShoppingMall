@@ -44,8 +44,8 @@ window.addEventListener("DOMContentLoaded", function () {
 
     mileageIn.innerHTML = toString(mileage);
 
-    function toString(mileage) {
-      return mileage.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+    function toString(element) {
+      return element.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
     }
 
     fetch(`http://localhost:8282/v1/me/cart`, {

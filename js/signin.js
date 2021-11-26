@@ -32,8 +32,6 @@ window.addEventListener("DOMContentLoaded", function () {
   const $signInButton = document.getElementById("logInButton");
 
   const userToken = localStorage.getItem("user_token");
-  const userPass = localStorage.getItem("user_pass");
-  const isLoggedIn = Boolean(userToken);
 
   $signInButton.addEventListener("click", () => {
     handleSignBtn();
