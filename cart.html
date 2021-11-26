@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/cart.css" />
+    <title>WJ shopping!</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header_title">
+        <a href="postman.html" class="header_link"
+          ><span class="visually_hidden">LOGO</span></a
+        >
+      </h1>
+      <div class="sign_and_cart">
+        <a href="signin.html" class="signin_link"
+          ><div class="signin">
+            <img src="./img/user.png" class="signin_img" alt="sign in" /><span
+              class="visually_hidden"
+              >마이페이지</span
+            >
+          </div></a
+        >
+        <a href="cart.html" class="cart_link"
+          ><div class="cart">
+            <img
+              src="./img/shopping-cart.png"
+              class="cart_img"
+              alt="cart"
+            /><span class="visually_hidden">장바구니</span>
+          </div></a
+        >
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="order_info">
+        <div class="order_item_info">
+          <div class="info_title">
+            <h2 class="info_head orderInfo">
+              ■ 주문상품 정보 / 총 <span class="total"></span>개
+            </h2>
+          </div>
+
+          <ul class="item_group"></ul>
+        </div>
+
+        <div class="detail_wrap">
+          <div class="detail_box">
+            <div class="label_box">
+              <label>주문 상품 수</label>
+            </div>
+            <p class="price_unit"><span class="total_qty"></span>개</p>
+          </div>
+
+          <div class="detail_box">
+            <div class="label_box">
+              <label>총 주문금액</label>
+            </div>
+            <p class="price_unit"><span class="total_price_zone"></span>원</p>
+          </div>
+
+          <div class="detail_box">
+            <div class="label_box">
+              <label>배송비</label>
+            </div>
+            <p class="price_unit">
+              <span class="delivery_charge_zone"></span>원
+            </p>
+          </div>
+
+          <div class="detail_box">
+            <div class="label_box">
+              <label class="final_price">총 결제금액</label>
+            </div>
+            <p class="price_unit final">
+              <span class="final_price_zone"></span>원
+            </p>
+          </div>
+        </div>
+
+        <div class="order_check"></div>
+
+        <button type="button" class="buy_btn">BUY NOW</button>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <ul class="footer_menu">
+        <li class="footer_menu_list">
+          <a href="#" class="footer_link">이용약관</a>
+        </li>
+        <li class="footer_menu_list">
+          <a href="#" class="footer_link">이용안내</a>
+        </li>
+        <li class="footer_menu_list">
+          <a href="#" class="footer_link">커뮤니티</a>
+        </li>
+      </ul>
+      <address class="footer_address">주소: OO시 OO구 OOO로</address>
+      <p class="footer_copyright">
+        COPYRIGHT © <span class="footer_copyright_text">WOOJINLEEdev</span> All
+        Right Reserved.
+      </p>
+    </footer>
+
+    <script src="./js/jwt-decode.js"></script>
+    <script src="./js/cart.js"></script>
+  </body>
+</html>

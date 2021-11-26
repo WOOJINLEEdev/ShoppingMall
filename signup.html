@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/signup.css">
+    <title>My Homepage : Welcome!</title>
+</head>
+<body>
+  <header class="header">
+    <h1 class="header_title">
+      <a href="postman.html" class="header_link"><span class="visually_hidden">LOGO</span></a>
+    </h1>
+    <div class="sign_and_cart">
+      <a href="signin.html" class="signin_link"><div class="signin"><img src="./img/user.png" class="signin_img" alt="sign in"><span class="visually_hidden">마이페이지</span></div></a>
+      <a href="cart.html" class="cart_link"><div class="header_cart"><img src="./img/shopping-cart.png" class="cart_img" alt="cart"><span class="visually_hidden">장바구니</span></div></a>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="join_wrapper">
+      <div class="join">
+        <h2 class="join_head">회원가입</h2>
+        <form class="join_form" action="main.html" method="post">
+            <label for="userId" class="form_label">아이디 (ID)</label>
+            <input type="text" class="form_input" id="userId">
+            
+            <label for="userPassword1" class="form_label">비밀번호 (Password)</label>
+            <input type="password" class="form_input" id="userPassword1" name="password1">
+
+            <label for="userPassword2" class="form_label">비밀번호 확인 (Password Confirm)</label>
+            <input type="password" class="form_input" id="userPassword2" name="password2">
+
+            <label for="name" class="form_label">이름 (Name)</label>
+            <input type="text" class="form_input" id="name">
+
+            <fieldset class="birth">
+              <legend class="form_label">생일 (Birthday)</legend>
+              <label for="month" class="month_label">월</label>
+              <input type="text" class="form_input month" id="month" name="month" placeholder="월" min="1" max="12">
+              
+              <span class="birth_text">-</span>
+
+              <label for="date" class="date_label">일</label>
+              <input type="text" class="form_input date" id="date" name="date" placeholder="일" min="1" max="31">
+            </fieldset>
+
+            <fieldset class="email">
+              <legend class="form_label">이메일 (E-mail)</legend>
+              <div class="email_box">
+                <label for="emailAddress"></label>
+                <input type="email" id="emailAddress" class="form_input mail" placeholder="E-MAIL ID"><span class="email_at">@</span>
+                <div class="email_select_box">
+                    <label for="emailDomain"></label>
+                    <select name="email" id="emailDomain" class="email_select">
+                          <option value="">선택하세요</option>
+                          <option value="naver">naver.com</option>
+                          <option value="daum">daum.net</option>
+                    </select>
+                </div>
+              </div>
+            </fieldset>
+
+            <button type="button" class="join_btn" id="joinBtn">가입하기</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <ul class="footer_menu">
+      <li class="footer_menu_list"><a href="#" class="footer_link">이용약관</a></li>
+      <li class="footer_menu_list"><a href="#" class="footer_link">이용안내</a></li>
+      <li class="footer_menu_list"><a href="#" class="footer_link">커뮤니티</a></li>
+    </ul>
+    <address class="footer_address">
+      주소: OO시 OO구 OOO로
+    </address>
+    <p class="footer_copyright">
+      COPYRIGHT © <span class="footer_copyright_text">WOOJINLEEdev</span> All Right Reserved.
+    </p>
+  </footer>
+
+  <script src="./js/jwt-decode.js"></script>
+  <script src="./js/signup.js"></script>
+
+</body>
+</html>

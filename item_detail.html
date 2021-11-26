@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/item_detail.css">
+  <title>WJ shopping!</title>
+</head>
+<body class="body">
+  <header class="header">
+    <h1 class="header_title">
+      <a href="postman.html" class="header_link"><span class="visually_hidden">LOGO</span></a>
+    </h1>
+
+    <div class="sign_and_cart">
+      <a href="signin.html" class="signin_link"><div class="signin"><img src="./img/user.png" class="signin_img" alt="sign in"><span class="visually_hidden">마이페이지</span></div></a>
+      <a href="cart.html" class="cart_link"><div class="header_cart"><img src="./img/shopping-cart.png" class="cart_img" alt="cart"><span class="visually_hidden">장바구니</span></div></a>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="list_element">
+      <div class="image_wrap">
+        <img class="image" alt="" src="https://shopping-mall-api-lab.s3.ap-northeast-2.amazonaws.com/depositphotos_5098747-stock-photo-sweater.jpg">
+      </div>
+      
+      <div class="image_text_wrap" id="imageTextWrap">
+        <table class="list_table">
+          <colgroup>
+            <col class="col_width">
+            <col class="col_width">
+          </colgroup>
+          <thead>
+            <tr>
+              <th class="thead_th" colspan="2" id="imageTextHead"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="tbody_th">Price</td>
+              <td class="tbody_td"><span id="imageTextBody"></span>원</td>
+            </tr>
+            <tr>
+              <th class="tbody_th">size</td>
+              <td class="tbody_td">
+                <select class="td_select">
+                  <option value="">- [필수] 옵션을 선택해주세요 -</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td class="tbody_td">
+                <div class="quantity_wrap">
+                  <input type="number" class="td_quantity" id="quantity" value="1">
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <table class="list_btn_table">
+          <tbody>
+            <tr>
+              <td class="btn_td">
+                <input type="button" class="list_btn cart" value="장바구니">
+              </td>
+              <td class="btn_td">
+                <input type="button" id="buyBtn" class="list_btn" value="구매하기">
+              </td>  
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <ul class="footer_menu">
+      <li class="footer_menu_list"><a href="#" class="footer_link">이용약관</a></li>
+      <li class="footer_menu_list"><a href="#" class="footer_link">이용안내</a></li>
+      <li class="footer_menu_list"><a href="#" class="footer_link">커뮤니티</a></li>
+    </ul>
+    <address class="footer_address">
+      주소: OO시 OO구 OOO로
+    </address>
+    <p class="footer_copyright">
+        COPYRIGHT © <span class="footer_copyright_text">WOOJINLEEdev</span> All Right Reserved.
+    </p>
+  </footer>
+
+  <div class="loading">
+    <img class="loading_image" src="./img/Fading circles.gif" alt="Loading..." />
+  </div>
+  
+  <script src="./js/jwt-decode.js"></script>
+  <script src="./js/item_detail.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/buy_submit.css">
+    <title>WJ shopping!</title>
+</head>
+<body>
+  <header class="header">
+    <h1 class="header_title">
+      <a href="postman.html" class="header_link"><span class="visually_hidden">LOGO</span></a>
+    </h1>
+    <div class="sign_and_cart">
+      <a href="signin.html" class="signin_link"><div class="signin"><img src="./img/user.png" class="signin_img" alt="sign in"><span class="visually_hidden">마이페이지</span></div></a>
+      <a href="cart.html" class="cart_link"><div class="cart"><img src="./img/shopping-cart.png" class="cart_img" alt="cart"><span class="visually_hidden">장바구니</span></div></a>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="order_wrapper">
+      <div class="delivery_coupon_pay_wrap">
+        <section class="delivery_info">
+          <div class="info_head_wrap">
+            <h2 class="info_head delivery">배송정보</h2>
+            <div class="info_head_sub"><span class="vital">*</span>표시는 필수입력 항목</div>
+          </div>
+          <ul class="delivery_write_choice">
+            <li class="delivery_write old">기존 배송지</li>
+            <li class="delivery_write new">신규입력</li>
+          </ul>
+
+          <div class="delivery_box_wrap">
+            <form method="POST">
+              <div class="delivery_box">
+                <div class="label_box">
+                  <label>배송지명</label>
+                </div>
+                <input type="text" class="delivery_input first">
+              </div>
+              
+              <div class="delivery_box">
+                <div class="label_box">
+                  <label>수령인<span class="vital">*</span></label>
+                </div>
+                <input type="text" class="delivery_input second">
+              </div>
+              
+              <div class="delivery_box">
+                <div class="label_box">
+                  <label>배송지<span class="vital">*</span></label>
+                </div>
+                <div class="delivery_address">
+                  <div class="postalCode_wrap">
+                    <input type="text" id="sample3_postcode" class="delivery_input postalCode" onclick="sample3_execDaumPostcode()" readonly placeholder="우편번호">
+                    <input type="button" class="postalCode_search" value="우편번호 찾기" onclick="sample3_execDaumPostcode()">
+                  </div>
+                  <div id="wrap" style="display:none;border:1px solid;width:100%;height:300px;margin:5px 0;position:relative">
+                    <img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnFoldWrap" style="cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1" onclick="foldDaumPostcode()" alt="접기 버튼">
+                  </div>
+
+                  <input type="text" id="sample3_address" class="delivery_input address" placeholder="주소" readonly><br>
+                  <input type="text" id="sample3_detailAddress" class="delivery_input address" placeholder="상세주소">
+                  <input type="text" id="sample3_extraAddress" class="delivery_input address" placeholder="참고항목">
+                </div>
+              </div>
+
+
+              <div class="delivery_box">
+                <div class="label_box">
+                  <label>연락처1<span class="vital">*</span></label>
+                </div>
+                <div class="tel_wrap">
+                  <input type="tel" maxlength="4" id="tel_first" class="delivery_input tel">
+                  <span class="tel_dash">-</span>
+                  <input type="tel" maxlength="4" id="tel_second" class="delivery_input tel">
+                  <span class="tel_dash">-</span>
+                  <input type="tel" maxlength="4" id="tel_third" class="delivery_input tel">
+                </div>
+              </div>
+    
+              <div class="delivery_box">
+                <div class="label_box">
+                  <label>연락처2</label>
+                </div>
+                <div class="tel_wrap">
+                  <input type="tel" maxlength="4" class="delivery_input tel">
+                  <span class="tel_dash">-</span>
+                  <input type="tel" maxlength="4" class="delivery_input tel">
+                  <span class="tel_dash">-</span>
+                  <input type="tel" maxlength="4" class="delivery_input tel">
+                </div>
+              </div>
+
+              <div class="delivery_box notice">
+                <div class="label_box"></div>
+                기본 배송지입니다. 주문 시 변경하신 내용으로 기본 배송지 주소가 수정됩니다.
+              </div>
+              
+              <div class="delivery_box">
+                <div class="label_box"></div>
+                <input type="text" class="delivery_input request" placeholder="배송시 요청사항을 작성해 주세요.">
+              </div>
+            </form>
+          </div>
+
+
+          <div class="delivery_box_wrap_second hide">
+            <form method="POST">
+              <div class="delivery_box">
+                <div class="label_box">
+                  <label>배송지명</label>
+                </div>
+                <input type="text" class="delivery_input first">
+              </div>
+              
+              <div class="delivery_box">
+                <div class="label_box">
+                  <label>수령인<span class="vital">*</span></label>
+                </div>
+                <input type="text" class="delivery_input secondName">
+              </div>
+              
+              <div class="delivery_box">
+                <div class="label_box">
+                  <label>배송지<span class="vital">*</span></label>
+                </div>
+                <div class="delivery_address">
+                  <div class="postalCode_wrap">
+                    <input type="text" id="sample4_postcode" class="delivery_input postalCode" readonly onclick="sample4_execDaumPostcode()" placeholder="우편번호">
+                    <input type="button" class="postalCode_search" onclick="sample4_execDaumPostcode()" value="우편번호 찾기">
+                  </div>
+                  <div id="wrap1" style="display:none;border:1px solid;width:100%;height:300px;margin:5px 0;position:relative">
+                    <img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnFoldWrap" style="cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1" onclick="foldDaumPostcode1()" alt="접기 버튼">
+                  </div>
+
+                  <input type="text" id="sample4_address" class="delivery_input address" placeholder="주소" disabled><br>
+                  <input type="text" id="sample4_detailAddress" class="delivery_input address" placeholder="상세주소">
+                  <input type="text" id="sample4_extraAddress" class="delivery_input address" placeholder="참고항목">
+                </div>
+              </div>
+
+
+              <div class="delivery_box">
+                <div class="label_box">
+                  <label>연락처1<span class="vital">*</span></label>
+                </div>
+                <div class="tel_wrap">
+                  <input type="tel" maxlength="4" id="tel_fourth" class="delivery_input tel">
+                  <span class="tel_dash">-</span>
+                  <input type="tel" maxlength="4" id="tel_fifth" class="delivery_input tel">
+                  <span class="tel_dash">-</span>
+                  <input type="tel" maxlength="4" id="tel_sixth" class="delivery_input tel">
+                </div>
+              </div>
+    
+              <div class="delivery_box">
+                <div class="label_box">
+                  <label>연락처2</label>
+                </div>
+                <div class="tel_wrap">
+                  <input type="tel" maxlength="4" class="delivery_input tel">
+                  <span class="tel_dash">-</span>
+                  <input type="tel" maxlength="4" class="delivery_input tel">
+                  <span class="tel_dash">-</span>
+                  <input type="tel" maxlength="4" class="delivery_input tel">
+                </div>
+              </div>
+
+              
+              <div class="delivery_box notice">
+                <div class="label_box"></div>
+                기본 배송지입니다. 주문 시 변경하신 내용으로 기본 배송지 주소가 수정됩니다.
+              </div>
+              
+
+              <div class="delivery_box">
+                <div class="label_box"></div>
+                <input type="text" class="delivery_input request" placeholder="배송시 요청사항을 작성해 주세요.">
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="coupon_zone">
+          <h2 class="info_head">쿠폰 / 마일리지</h2>
+          <div class="coupon_mileage_wrap">
+            <div class="coupon_box">
+              <div class="label_box">
+                <label>쿠폰</label>
+              </div>
+              <select class="coupon_select">
+              </select>
+            </div>
+            <div class="coupon_box mileage">
+              <div class="label_box">
+                <label>마일리지</label>
+              </div>
+              <input type="text" class="mileage_input" placeholder="0" />
+              <button type="button" class="all_mileage">모두 사용</button>
+              <span class="mileage_own">보유 마일리지<span class="mileage_unit"><span class="mileage_in"></span>p</span></span>
+            </div>
+
+          </div>
+        </section>
+
+        <section class="pay_zone">
+          <div class="info_head_wrap">
+            <h2 class="info_head pay">결제방법</h2>
+            <a href="#" class="card_benefit">무이자 카드혜택 보기</a>
+          </div>
+          <div class="payment_info_wrap">
+            <ul class="payment_method">
+              <li class="payment">신용/체크카드</li>
+              <li class="payment">현대카드</li>
+              <li class="payment">네이버 페이</li>
+              <li class="payment">토스</li>
+              <li class="payment">페이코</li>
+              <li class="payment">카카오 페이</li>
+              <li class="payment">삼성 페이</li>
+              <li class="payment">SSG페이</li>
+              <li class="payment">무통장 입금</li>
+              <li class="payment">휴대폰 결제</li>
+              <li class="payment">실시간 계좌이체</li>
+            </ul>
+            <div class="pay_info">
+              <h3 class="pay_info_head">신용/체크카드</h3>
+              <p class="pay_info_text">
+                MAC 환경에서도 신용카드 결제가 가능합니다.(ISP 결제 제외)
+              </p>
+              <p class="pay_info_text">
+                국내 모든 카드 사용이 가능하며 해외에서 발행된 카드는 이용하실 수 없습니다.(해외배송은 불가능합니다.)</p>
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section class="order_info">
+        <div class="order_item_info">
+          <h2 class="info_head orderInfo">주문상품 정보 / 총 <span class="total"></span>개</h2>
+          <ul class="info_group">
+          </ul>
+        </div>
+        
+        <ul class="detail_wrap"></ul>
+
+        <div class="order_check">
+          <input type="checkbox" class="order_agree" id="agreeCheck">
+          <label for="agreeCheck" class="agree_label">주문하실 상품 및 결제, 주문정보를 확인하였으며, 이에 동의합니다.(필수)</label>
+        </div>
+
+        <button type="button" class="checkout_btn">CHECK OUT</button>
+      </section>
+         
+    </div>
+  </main>
+
+  <footer class="footer">
+    <ul class="footer_menu">
+      <li class="footer_menu_list"><a href="#" class="footer_link">이용약관</a></li>
+      <li class="footer_menu_list"><a href="#" class="footer_link">이용안내</a></li>
+      <li class="footer_menu_list"><a href="#" class="footer_link">커뮤니티</a></li>
+    </ul>
+    <address class="footer_address">
+      주소: OO시 OO구 OOO로
+    </address>
+    <p class="footer_copyright">
+        COPYRIGHT © <span class="footer_copyright_text">WOOJINLEEdev</span> All Right Reserved.
+    </p>
+  </footer>
+
+  <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <script src="./js/jwt-decode.js"></script>
+  <script src="./js/buy_submit.js"></script>
+  
+</body>
+</html>

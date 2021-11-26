@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/signin.css">
+    <title>WJ shopping!</title>
+</head>
+<body>
+  <header class="header">
+    <h1 class="header_title">
+      <a href="postman.html" class="header_link"><span class="visually_hidden">LOGO</span></a>
+    </h1>
+    <div class="sign_and_cart">
+      <a href="signin.html" class="signin_link"><div class="signin"><img src="./img/user.png" class="signin_img" alt="sign in"><span class="visually_hidden">마이페이지</span></div></a>
+      <a href="cart.html" class="cart_link"><div class="cart"><img src="./img/shopping-cart.png" class="cart_img" alt="cart"><span class="visually_hidden">장바구니</span></div></a>
+    </div>
+  </header>
+
+  <main class="main">
+    <form class="login_form" name="login_form"  method="POST">
+      <fieldset class="login_fieldset">
+        <legend class="visually_hidden">로그인</legend>
+        <div>
+          <label for="userId" class="visually_hidden">아이디</label>
+          <input type="text" name="id" id="userId" class="login_input id" placeholder="아이디" onkeydown="console.log('c')">
+        </div>
+        <div>
+          <label for="userPassword" class="visually_hidden">비밀번호</label>
+          <input type="password" name="password" id="userPassword" class="login_input password" placeholder="비밀번호">
+        </div>
+        <button type="button" id="logInButton" class="login_btn">로그인</button>
+      </fieldset>
+    </form>
+
+    <ul class="main_find_information">
+      <li class="find_info_list"><a href="#" class="find_link">아이디 찾기</a></li>
+      <li class="find_info_list"><a href="#" class="find_link">비밀번호 찾기</a></li>
+      <li class="find_info_list"><a href="signup.html" class="find_link">회원가입</a></li>
+    </ul>
+  </main>
+
+  <footer class="footer">
+    <ul class="footer_menu">
+      <li class="footer_menu_list"><a href="#" class="footer_link">이용약관</a></li>
+      <li class="footer_menu_list"><a href="#" class="footer_link">이용안내</a></li>
+      <li class="footer_menu_list"><a href="#" class="footer_link">커뮤니티</a></li>
+    </ul>
+    <address class="footer_address">
+      주소: OO시 OO구 OOO로
+    </address>
+    <p class="footer_copyright">
+        COPYRIGHT © <span class="footer_copyright_text">WOOJINLEEdev</span> All Right Reserved.
+    </p>
+  </footer>
+
+  <script src="./js/jwt-decode.js"></script>
+  <script src="./js/signin.js"></script>
+
+</body>
+</html>
