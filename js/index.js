@@ -4,7 +4,7 @@ function goToItemDetail(itemId) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const [_, userId] = window.location.search.substring(1).split("=");
+  // const [_, userId] = window.location.search.substring(1).split("=");
 
   const userToken = localStorage.getItem("user_token");
   const userPass = localStorage.getItem("user_pass");
@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const $signin = document.querySelector(".signin");
   }
 
-  // --- 숫자 3자리 콤마
   function toString(mileage) {
     return mileage.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
   }
@@ -54,8 +53,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const accessToken = localStorage.getItem("access_token");
   if (accessToken) {
     const decoded = jwt_decode(accessToken);
-    const userId = decoded.user.id;
-    const $userId = decoded.user.user_id;
+    // const userId = decoded.user.id;
+    // const $userId = decoded.user.user_id;
 
     console.log("decoded:", decoded);
 
@@ -78,7 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   const more = document.querySelector(".more_btn");
-  // let secondUl = document.querySelector(".second_group");
 
   more.addEventListener("click", () => {
     paging();
@@ -109,8 +107,6 @@ document.addEventListener("DOMContentLoaded", function () {
           )}원</p>
           </div>
         </li>`;
-
-          console.log(data[i].name);
         }
         $listGroup.insertAdjacentHTML("beforeend", productsHTML2);
       });

@@ -66,7 +66,7 @@ window.addEventListener("DOMContentLoaded", function () {
     logoutBtn.addEventListener("click", function () {
       alert("로그아웃 되었습니다.");
       localStorage.clear();
-      location.href = "postman.html";
+      location.href = "index.html";
     });
   }
 });

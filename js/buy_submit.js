@@ -546,7 +546,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     alert("유효성 체크 완료");
-    location.href = "postman.html";
+    location.href = "index.html";
   }
 });
 

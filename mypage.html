@@ -1,70 +1,93 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/mypage.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/mypage.css" />
     <title>WJ shopping!</title>
-</head>
-<body>
-  <header class="header">
-    <h1 class="header_title">
-      <a href="postman.html" class="header_link"><span class="visually_hidden">LOGO</span></a>
-    </h1>
-    <div class="sign_and_cart">
-      <a href="signin.html" class="signin_link"><div class="signin"><img src="./img/user.png" class="signin_img" alt="sign in"><span class="visually_hidden">마이페이지</span></div></a>
-      <a href="cart.html" class="cart_link"><div class="cart"><img src="./img/shopping-cart.png" class="cart_img" alt="cart"><span class="visually_hidden">장바구니</span></div></a>
-    </div>    
-  </header>
-
-  <main class="main">
-    <h2 class="main_title">마이페이지</h2>
-    <div class="myInfo">
-      <p class="greet">
-        <span class="greet_user"></span> 회원님, 안녕하세요!
-      </p>
-      <div class="modify_logout_wrap">
-        <div class="myInfo_modify">회원정보 수정</div>
-        <div class="myInfo_logout">로그아웃</div>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header_title">
+        <a href="index.html" class="header_link"
+          ><span class="visually_hidden">LOGO</span></a
+        >
+      </h1>
+      <div class="sign_and_cart">
+        <a href="signin.html" class="signin_link"
+          ><div class="signin">
+            <img src="./img/user.png" class="signin_img" alt="sign in" /><span
+              class="visually_hidden"
+              >마이페이지</span
+            >
+          </div></a
+        >
+        <a href="cart.html" class="cart_link"
+          ><div class="cart">
+            <img
+              src="./img/shopping-cart.png"
+              class="cart_img"
+              alt="cart"
+            /><span class="visually_hidden">장바구니</span>
+          </div></a
+        >
       </div>
-    </div>
+    </header>
 
-    <ul class="my_wrap">
-      <li class="my order">
-        주문내역 조회
-      </li>
-      <li class="my coupon">
+    <main class="main">
+      <h2 class="main_title">마이페이지</h2>
+      <div class="myInfo">
+        <p class="greet">
+          <span class="greet_user"></span> 회원님, 안녕하세요!
+        </p>
+        <div class="modify_logout_wrap">
+          <div class="myInfo_modify">회원정보 수정</div>
+          <div class="myInfo_logout">로그아웃</div>
+        </div>
+      </div>
+
+      <ul class="my_wrap">
+        <li class="my order">주문내역 조회</li>
+        <li class="my coupon">
           <span class="coupon_text">쿠폰</span>
-      </li>
-      <li class="my mileage">
-        <span class="mileage_text">마일리지</span>
-      </li>
-      <li class="my address">
-        배송지 등록 / 변경
-      </li>
-    </ul>
-  </main>
+        </li>
+        <li class="my mileage">
+          <span class="mileage_text">마일리지</span>
+        </li>
+        <li class="my address">배송지 등록 / 변경</li>
+      </ul>
+    </main>
 
-  <footer class="footer">
-    <ul class="footer_menu">
-      <li class="footer_menu_list"><a href="#" class="footer_link">이용약관</a></li>
-      <li class="footer_menu_list"><a href="#" class="footer_link">이용안내</a></li>
-      <li class="footer_menu_list"><a href="#" class="footer_link">커뮤니티</a></li>
-    </ul>
-    <address class="footer_address">
-      주소: OO시 OO구 OOO로
-    </address>
-    <p class="footer_copyright">
-        COPYRIGHT © <span class="footer_copyright_text">WOOJINLEEdev</span> All Right Reserved.
-    </p>
-  </footer>
+    <footer class="footer">
+      <ul class="footer_menu">
+        <li class="footer_menu_list">
+          <a href="#" class="footer_link">이용약관</a>
+        </li>
+        <li class="footer_menu_list">
+          <a href="#" class="footer_link">이용안내</a>
+        </li>
+        <li class="footer_menu_list">
+          <a href="#" class="footer_link">커뮤니티</a>
+        </li>
+      </ul>
+      <address class="footer_address">주소: OO시 OO구 OOO로</address>
+      <p class="footer_copyright">
+        COPYRIGHT © <span class="footer_copyright_text">WOOJINLEEdev</span> All
+        Right Reserved.
+      </p>
+    </footer>
 
-  <script src="./js/jwt-decode.js"></script>
-  <script src="./js/mypage.js"></script>
-
-</body>
+    <script src="./js/jwt-decode.js"></script>
+    <script src="./js/mypage.js"></script>
+  </body>
 </html>

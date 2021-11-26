@@ -31,8 +31,6 @@ window.addEventListener("DOMContentLoaded", function () {
   let $userPassword = document.getElementById("userPassword");
   const $signInButton = document.getElementById("logInButton");
 
-  const userToken = localStorage.getItem("user_token");
-
   $signInButton.addEventListener("click", () => {
     handleSignBtn();
   });
@@ -96,7 +94,7 @@ window.addEventListener("DOMContentLoaded", function () {
     if ("a" === ID && "1" === PASS) {
       alert("로그인되었습니다.");
       localStorage.setItem("user_token", "jwe0f9we8f09w8e9f0809wf");
-      location.href = "postman.html";
+      location.href = "index.html";
       bgGreen();
     } else {
       alert("회원 정보와 일치하지 않습니다.");

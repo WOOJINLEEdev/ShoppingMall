@@ -1,5 +1,4 @@
 function goToBuySubmit(userId) {
-  console.log("userId:", userId);
   location.href = `buy_submit.html?cart_id=${userId}`;
 }
 
@@ -230,6 +229,7 @@ function count(type, target, prc) {
 }
 
 async function checkCart() {
+  const accessToken = localStorage.getItem("access_token");
   const res = await fetch(`http://localhost:8282/v1/me/cart`, {
     method: "GET",
     mode: "cors",
