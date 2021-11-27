@@ -48,7 +48,7 @@ window.addEventListener("DOMContentLoaded", function () {
       return element.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
     }
 
-    fetch(`http://localhost:8282/v1/me/cart`, {
+    fetch(`https://shopping-mall-api-lab.click/v1/me/cart`, {
       method: "GET",
       mode: "cors",
       headers: {

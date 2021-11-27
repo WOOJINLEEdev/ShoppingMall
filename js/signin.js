@@ -3,7 +3,7 @@ function goToMyPage(userId) {
   const decoded = jwt_decode(accessToken);
   const $userId = decoded.user.id;
 
-  fetch(`http://localhost:8282/v1/auth/join`, {
+  fetch(`https://shopping-mall-api-lab.click/v1/auth/join`, {
     method: "GET",
     mode: "cors",
     headers: {
@@ -42,7 +42,7 @@ window.addEventListener("DOMContentLoaded", function () {
   });
 
   function handleSignBtn() {
-    fetch("http://localhost:8282/v1/auth/login", {
+    fetch("https://shopping-mall-api-lab.click/v1/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -108,7 +108,7 @@ window.addEventListener("DOMContentLoaded", function () {
     localStorage.removeItem("user_pass");
   }
 
-  fetch("http://localhost:8282/v1/products")
+  fetch("https://shopping-mall-api-lab.click/v1/products")
     .then((response) => response.json())
     .then((data) => {
       console.log(data);

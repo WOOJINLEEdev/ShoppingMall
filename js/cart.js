@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     sign_link.setAttribute("href", "mypage.html");
 
     let cartItems = [];
-    fetch(`http://localhost:8282/v1/me/cart`, {
+    fetch(`https://shopping-mall-api-lab.click/v1/me/cart`, {
       method: "GET",
       mode: "cors",
       headers: {
@@ -90,13 +90,16 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         function itemRemove(target, cartItemId) {
-          fetch(`http://localhost:8282/v1/me/cart/items/${cartItemId}`, {
-            method: "DELETE",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${accessToken}`,
-            },
-          })
+          fetch(
+            `https://shopping-mall-api-lab.click/v1/me/cart/items/${cartItemId}`,
+            {
+              method: "DELETE",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${accessToken}`,
+              },
+            }
+          )
             .then((response) => response.json())
             .then((data) => {
               let li = target.parentElement.parentElement;
@@ -230,7 +233,7 @@ function count(type, target, prc) {
 
 async function checkCart() {
   const accessToken = localStorage.getItem("access_token");
-  const res = await fetch(`http://localhost:8282/v1/me/cart`, {
+  const res = await fetch(`https://shopping-mall-api-lab.click/v1/me/cart`, {
     method: "GET",
     mode: "cors",
     headers: {
@@ -247,17 +250,20 @@ async function checkCart() {
   }));
   console.log("cartItemsData", cartItemsData);
 
-  const checkoutRes = await fetch("http://localhost:8282/v1/checkouts", {
-    method: "POST",
-    mode: "cors",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${accessToken}`,
-    },
-    body: JSON.stringify({
-      line_items: cartItemsData,
-    }),
-  }).then((response) => response.json());
+  const checkoutRes = await fetch(
+    "https://shopping-mall-api-lab.click/v1/checkouts",
+    {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${accessToken}`,
+      },
+      body: JSON.stringify({
+        line_items: cartItemsData,
+      }),
+    }
+  ).then((response) => response.json());
 
   goToBuySubmit(checkoutRes.checkout_id);
 }

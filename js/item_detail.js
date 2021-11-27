@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   let variants;
-  fetch(`http://localhost:8282/v1/products/${itemId}`)
+  fetch(`https://shopping-mall-api-lab.click/v1/products/${itemId}`)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const variantId = variantsFiltered[0].id;
 
-    fetch(`http://localhost:8282/v1/me/cart`, {
+    fetch(`https://shopping-mall-api-lab.click/v1/me/cart`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const variantId = variantsFiltered[0].id;
     console.log("variantId", variantId);
 
-    fetch("http://localhost:8282/v1/checkouts", {
+    fetch("https://shopping-mall-api-lab.click/v1/checkouts", {
       method: "POST",
       mode: "cors",
       headers: {
@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
 window.onload = async () => {
   const $main = document.querySelector(".main");
   $main.classList.add("hide");
-  let response = await fetch("http://localhost:8282/v1/products");
+  let response = await fetch("https://shopping-mall-api-lab.click/v1/products");
 
   $main.classList.remove("hide");
   document.querySelector(".loading").style.display = "none";

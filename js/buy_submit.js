@@ -221,7 +221,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const [_, checkoutId] = window.location.search.substring(1).split("=");
     console.log("체크아웃아이디", checkoutId);
 
-    fetch(`http://localhost:8282/v1/checkouts/${checkoutId}`, {
+    fetch(`https://shopping-mall-api-lab.click/v1/checkouts/${checkoutId}`, {
       method: "GET",
       mode: "cors",
       headers: {

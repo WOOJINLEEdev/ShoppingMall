@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", function () {
-  fetch("http://localhost:8282/v1/products")
+  fetch("https://shopping-mall-api-lab.click/v1/products")
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
@@ -51,7 +51,7 @@ window.addEventListener("DOMContentLoaded", function () {
       location.href = "signin.html";
     }
 
-    fetch("http://localhost:8282/v1/auth/join", {
+    fetch("https://shopping-mall-api-lab.click/v1/auth/join", {
       method: "post",
       headers: {
         "Content-Type": "application/json",

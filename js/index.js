@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return mileage.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
   }
 
-  fetch("http://localhost:8282/v1/products")
+  fetch("https://shopping-mall-api-lab.click/v1/products")
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let sign_link = document.querySelector(".signin_link");
     sign_link.setAttribute("href", "mypage.html");
 
-    fetch(`http://localhost:8282/v1/me/cart`, {
+    fetch(`https://shopping-mall-api-lab.click/v1/me/cart`, {
       method: "GET",
       mode: "cors",
       headers: {
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function paging() {
-    fetch("http://localhost:8282/v1/products")
+    fetch("https://shopping-mall-api-lab.click/v1/products")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
 window.onload = async () => {
   const $main = document.getElementsByClassName("main")[0];
   $main.classList.add("hide");
-  let response = await fetch("http://localhost:8282/v1/products");
+  let response = await fetch("https://shopping-mall-api-lab.click/v1/products");
 
   $main.classList.remove("hide");
   document.getElementById("loading").style.display = "none";
